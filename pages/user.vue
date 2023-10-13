@@ -75,7 +75,7 @@
             <div class="py-3">
               <button
                 type="button"
-                class="w-full @btn @btn-md @btn-warning dark:@btn-outline dark:focus:focus-within:bg-warning dark:focus:focus-within:text-slate-800"
+                class="w-full @btn @btn-md @btn-warning hover:bg-[#e4a900] hover:text-white focus:focus-within:bg-[#e4a900] focus:focus-within:text-white focus:focus-within:border-2 focus:focus-within:border-[#fff] dark:@btn-outline dark:focus:focus-within:bg-warning dark:focus:focus-within:text-slate-800"
                 @click="deleteUser"
               >
                 Delete User?
@@ -84,7 +84,7 @@
             <div class="py-2 flex justify-around">
               <button
                 type="button"
-                class="text-white drop-shadow-lg @btn @btn-md @btn-error dark:@btn-outline dark:focus:focus-within:bg-error dark:focus:focus-within:text-slate-800"
+                class="text-white drop-shadow-lg @btn @btn-md @btn-error hover:bg-[#e66264] focus:focus-within:bg-[#e66264] focus:focus-within:border-2 focus:focus-within:border-[#fff] dark:@btn-outline dark:focus:focus-within:bg-error dark:focus:focus-within:text-slate-800"
                 @click="
                   resetUser()
                   isUpdating = !isUpdating
@@ -94,7 +94,7 @@
               </button>
               <button
                 type="submit"
-                class="text-white drop-shadow-lg @btn @btn-md @btn-success dark:@btn-outline dark:focus:focus-within:bg-success dark:focus:focus-within:text-slate-800"
+                class="text-white drop-shadow-lg @btn @btn-md @btn-success hover:bg-[#0ebf87] focus:focus-within:border-2 focus:focus-within:border-[#fff] focus:focus-within:bg-[#0ebf87] dark:@btn-outline dark:focus:focus-within:bg-success dark:focus:focus-within:text-slate-800"
               >
                 Update
               </button>
