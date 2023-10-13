@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest&family=Roboto+Slab&display=swap');
+
+html {
+  @apply scrollbar-thin scrollbar-track-rounded-md scrollbar-thumb-rounded-md scrollbar-thumb-blue-300 scrollbar-track-blue-600 dark:scrollbar-thumb-purple-800 dark:scrollbar-track-purple-950;
+}
+
+* {
+  outline-style: none;
+  @apply font-roboto-slab;
+}
+
+.loading {
+  @apply bg-white dark:bg-[#1D232A];
+}
+
+#top-navbar {
+  @apply z-50 absolute md:relative;
+
+  & a {
+    @apply text-xl;
+    &.nuxt-link-active {
+      @apply text-white p-1 px-2 bg-primary rounded-md font-bold focus:border-2 focus:border-white md:focus:border-orange-300;
+    }
+    &:not(.nuxt-link-active) {
+      @apply duration-300 text-purple-600 md:text-orange-600 dark:text-white md:dark:text-white;
+
+      &:hover {
+        @apply text-white dark:text-orange-500 md:text-orange-900 md:dark:text-orange-500;
+      }
+      &:focus:focus-within {
+        font-weight: bold;
+        border-bottom-width: 4px;
+        @apply md:border-b-orange-700 md:dark:text-orange-500 md:dark:border-b-purple-700;
+        @apply border-b-amber-900 dark:text-orange-500 dark:border-b-purple-500;
+      }
+    }
+  }
+}
+
+button#show-update-form {
+  &:hover {
+    border: none;
+    background-color: darken($color: #3abff8, $amount: 10);
+    color: #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:hover {
+      background-color: darken($color: #3abff8, $amount: 20);
+    }
+  }
+
+  &:focus:focus-visible:focus-within {
+    @apply border-none outline-none dark:bg-blue-500;
+  }
+}
+
+form.user-form-no-focus {
+  @apply bg-slate-200 dark:bg-slate-800;
+
+  button:focus:focus-within,
+  input:focus:focus-within {
+    outline: none;
+  }
+
+  input:focus:focus-within {
+    @apply border-2 border-orange-500 dark:@input-primary;
+  }
+}
+
+#user-nickname {
+  @apply flex-grow-0 text-xl md:flex-grow md:text-lg;
+}
+
+#footer {
+  header {
+    @apply text-xl mb-2 font-bold uppercase;
+  }
+  a {
+    @apply text-lg outline-none duration-300;
+
+    &:focus:focus-within:focus-visible {
+      @apply outline-none underline decoration-orange-500 decoration-2;
+    }
+  }
+  a:hover {
+    @apply text-orange-700;
+  }
+}
