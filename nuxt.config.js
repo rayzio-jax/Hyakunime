@@ -17,8 +17,16 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      { name: 'msapplication-TileColor', content: '#da532c' },
+      { name: 'theme-color', content: '#ffffff' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'apple-touch-icon', size: '180x180', href: '/apple-touch-icon.png' },
+      { rel: 'icon', type: 'image/x-icon', size: '32x32', href: '/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/x-icon', size: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'manifest', href: 'site.webmanifest' },
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
+    ],
     script: [
       { src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js', type: 'module' },
       { src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js', type: 'nomodule' }
@@ -26,7 +34,7 @@ export default {
   },
 
   target: 'server',
-  ssr: false,
+  ssr: true,
   loadingIndicator: {
     name: 'cube-grid',
     color: '#fff',
@@ -100,7 +108,7 @@ export default {
 
   tailwindcss: {
     scssPath: '~/assets/style/_tailwind.scss',
-    configPath: 'tailwind.config',
+    configPath: 'tailwind.config.js',
     exposeConfig: false,
     exposeLevel: 2,
     injectPosition: 'first',
