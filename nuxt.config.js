@@ -28,7 +28,6 @@ export default {
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
     ],
     script: [
-      { src: 'https://cdn.trakteer.id/js/embed/trbtn.min.js', type: 'text/javascript' },
       { src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js', type: 'module' },
       { src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js', type: 'nomodule' }
     ]
