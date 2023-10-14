@@ -95,6 +95,7 @@ export default {
   env: {
     'SUPABASE_URL': process.env.SUPABASE_URL,
     'SUPABASE_CLIENT_KEY': process.env.SUPABASE_CLIENT_KEY,
+    'SUPABASE_ADMIN_KEY': process.env.SUPABASE_ADMIN_KEY,
     'API_KEY': process.env.API_KEY,
     'API_HOST': process.env.API_HOST
   },
