@@ -102,8 +102,6 @@ export default {
     },
 
     async postBookmark(anime) {
-      // const token = this.$cookies.get('auth.token')
-      // const supabaseClient = supabase({ token })
       const user = this.$cookies.get('user.id')
 
       const { data, error } = await this.supabaseClient
