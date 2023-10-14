@@ -24,16 +24,6 @@
           <ion-icon name="search"></ion-icon>
         </button>
       </form>
-
-      <!-- <div>
-        <input
-          data-toggle-theme="dark,light"
-          data-act-class="ACTIVECLASS"
-          type="checkbox"
-          class="@toggle"
-          checked
-        />
-      </div> -->
     </div>
     <!-- showing list of anime -->
     <anime-list
