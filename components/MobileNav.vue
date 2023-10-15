@@ -27,7 +27,16 @@
         </div>
 
         <div class="w-full p-3 flex flex-col gap-y-10">
-          <h1 id="user-nickname">{{ nickname }}</h1>
+          <!-- <h1 id="user-nickname">{{ nickname }}</h1> -->
+          <div class="user-nickname">
+            <span
+              v-for="(text, i) in nickname"
+              :key="i"
+              :style="{ animationDelay: `calc(0.1s * ${i + 1})` }"
+            >
+              {{ text }}
+            </span>
+          </div>
           <nuxt-link to="/anime/page/" @click.native="resetAnimeSearch">
             Anime
           </nuxt-link>
@@ -69,8 +78,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 a {
   width: fit-content;
+}
+.user-nickname {
+  position: relative;
+  -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  & span {
+    padding: 0 5px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    animation: waviy 1.2s infinite ease-out;
+  }
 }
 </style>
