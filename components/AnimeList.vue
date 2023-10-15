@@ -1,5 +1,5 @@
 <template>
-  <div class="h-fit p-3">
+  <div class="h-fit p-5">
     <!-- if api has reach limit -->
     <div
       v-if="apiLimit"
@@ -21,20 +21,25 @@
         <!-- anime cards -->
         <anime-cards :anime-data="animeData" />
         <!-- prev / next page -->
-        <div class="w-full flex justify-between">
+        <div
+          class="w-full flex items-center mx-auto px-2"
+          :class="[isMorePage ? 'justify-between' : 'justify-center']"
+        >
           <button
-            class="text-lg @btn @btn-outline @btn-md"
-            :class="[currentPage > 1 ? 'block' : 'hidden']"
+            v-if="isMorePage"
+            class="text-lg @btn @btn-md"
+            :class="[reachMinPage ? '@btn-disabled' : '@btn-outline']"
             type="button"
             @click="fetchPrevPage"
           >
             Prev Page
           </button>
-          <div :class="[isMorePage ? 'block' : 'hidden']"></div>
+          <trakteer-button />
           <button
+            v-if="isMorePage"
             type="button"
-            class="text-lg @btn @btn-outline @btn-md"
-            :class="[isMorePage ? 'block' : 'hidden']"
+            class="text-lg @btn @btn-md"
+            :class="[reachMaxPage ? '@btn-disabled' : '@btn-outline']"
             @click="fetchNextPage"
           >
             Next Page
@@ -53,11 +58,12 @@
 </template>
 
 <script>
+import TrakteerButton from './TrakteerButton.vue'
 import AnimeCards from '~/components/AnimeCards.vue'
-
 export default {
   components: {
     AnimeCards,
+    TrakteerButton,
   },
 
   props: {
@@ -72,6 +78,14 @@ export default {
       default: null,
     },
     isFetching: {
+      type: Boolean,
+      default: false,
+    },
+    reachMaxPage: {
+      type: Boolean,
+      default: false,
+    },
+    reachMinPage: {
       type: Boolean,
       default: false,
     },
