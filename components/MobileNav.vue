@@ -27,7 +27,6 @@
         </div>
 
         <div class="w-full p-3 flex flex-col gap-y-10">
-          <!-- <h1 id="user-nickname">{{ nickname }}</h1> -->
           <div class="user-nickname">
             <span
               v-for="(text, i) in nickname"

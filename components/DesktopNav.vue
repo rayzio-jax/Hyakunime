@@ -3,7 +3,6 @@
     <div
       class="w-full p-3 flex border-b-2 border-blue-400 gap-x-10 justify-center items-center"
     >
-      <!-- <h1 class="user-nickname">{{ nickname }}</h1> -->
       <div class="user-nickname">
         <span
           v-for="(text, i) in nickname"
