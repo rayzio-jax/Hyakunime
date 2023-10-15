@@ -111,7 +111,6 @@
 </template>
 
 <script>
-// import { supabase } from '~/api/supabase'
 export default {
   name: 'LoginPage',
   layout: 'login',
@@ -262,6 +261,8 @@ export default {
       this.$cookies.set('auth.token', session?.access_token, {
         path: '/',
         maxAge: 60 * 60 * 24 * 30,
+        sameSite: 'lax',
+        secure: true,
       })
       return this.$router.push('/anime/page/1')
     },

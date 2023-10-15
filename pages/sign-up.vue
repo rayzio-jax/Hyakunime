@@ -324,6 +324,8 @@ export default {
       this.$cookies.set('auth.token', session.access_token, {
         path: '/',
         maxAge: 60 * 60 * 24 * 30,
+        sameSite: 'lax',
+        secure: true,
       })
       this.$router.push({ path: '/' })
     },
