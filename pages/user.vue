@@ -107,6 +107,7 @@
 </template>
 
 <script>
+import { supabase } from '~/api/supabase'
 export default {
   middleware: 'auth',
   data() {
@@ -180,17 +181,19 @@ export default {
     },
 
     async deleteUser() {
+      const supabaseAdmin = supabase({ key: 'admin' })
+
       // get user
       const user = await this.$supabase.auth.user()
 
       // sign out
-      // const { error: signOutError } = await this.$supabase.auth.signOut()
+      const { error: signOutError } = await this.$supabase.auth.signOut()
 
-      // if (signOutError) {
-      //   console.error('Error signing out user!', signOutError.message)
-      //   this.errorMessage = 'Sign Out Error!'
-      //   return (this.isError = true)
-      // }
+      if (signOutError) {
+        console.error('Error signing out user!', signOutError.message)
+        this.errorMessage = 'Sign Out Error!'
+        return (this.isError = true)
+      }
 
       if (user) {
         // delete user's data from other table
@@ -207,14 +210,8 @@ export default {
         console.log("User's data deleted successfully")
 
         const userId = user?.id
-        const { error: authDeleteError } = this.$supabase.auth.api.deleteUser(
-          userId,
-          {
-            headers: {
-              apiKey: process.env.SUPABASE_CLIENT_KEY,
-            },
-          }
-        )
+        const { error: authDeleteError } =
+          supabaseAdmin.auth.api.deleteUser(userId)
 
         if (authDeleteError) {
           console.error('Error delete user: ', authDeleteError.message)
