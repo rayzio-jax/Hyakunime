@@ -1,6 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 
-export const supabase = ({ token = null, key = null }) => {
+export const supabase = ({ token = null }) => {
     const supabaseUrl = process.env.SUPABASE_URL
     const options = {
         db: {
@@ -17,12 +17,6 @@ export const supabase = ({ token = null, key = null }) => {
                 "Prefer": "return=representation"
             },
         },
-    }
-
-    if (key === 'admin') {
-        const supabaseKey = process.env.SUPABASE_ADMIN_KEY
-        const supabase = createClient(supabaseUrl, supabaseKey, options)
-        return supabase
     }
 
     const supabaseKey = process.env.SUPABASE_CLIENT_KEY
