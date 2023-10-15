@@ -28,7 +28,7 @@ export default {
   middleware: 'auth',
   data() {
     return {
-      userNickname: this.$store.state.userNickname,
+      userNickname: 'User',
       isMobileMenu: false,
       isMobile: false,
     }
@@ -40,7 +40,14 @@ export default {
     const user = this.$supabase.auth.user()
     const userNickname = user?.user_metadata?.nickname
     this.$store.dispatch('setUserNickname', userNickname)
-    this.userNickname = this.$store.state.userNickname
+    this.userNickname = this.$store.state.userNickname || 'User'
+    if (
+      this.userNickname === '' ||
+      this.userNickname === null ||
+      this.userNickname === undefined
+    ) {
+      this.$store.dispatch('setUserNickname', 'User')
+    }
     const screen = window.innerWidth
     screen < 768 ? (this.isMobile = true) : (this.isMobile = false)
   },
