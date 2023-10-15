@@ -15,7 +15,7 @@ html {
 }
 
 #top-navbar {
-  @apply z-50 absolute md:relative;
+  @apply z-50 absolute sm:relative;
 
   & a {
     @apply text-xl;
@@ -69,8 +69,8 @@ form.user-form-no-focus {
   }
 }
 
-#user-nickname {
-  @apply flex-grow-0 text-xl md:flex-grow md:text-lg;
+.user-nickname {
+  @apply flex-grow-0 text-xl sm:text-base md:flex-grow md:text-lg;
 }
 
 #footer {
