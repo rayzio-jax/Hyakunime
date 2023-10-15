@@ -92,14 +92,7 @@ export default {
   },
 
   methods: {
-    // async refreshAnime(data) {
     refreshAnime(data) {
-      // this.isBooked = await data
-      // if (!this.isBooked) {
-      //   setTimeout(() => {
-      //     this.getAnimeFromUser()
-      //   }, 1000)
-      // }
       setTimeout(() => {
         this.getAnimeFromUser()
       }, 500)
@@ -111,8 +104,8 @@ export default {
     },
 
     async getAnimeFromUser() {
-      const token = this.$cookies.get('auth.token')
-      const supabaseClient = supabase({ token })
+      const authToken = this.$cookies.get('auth.token')
+      const supabaseClient = supabase({ token: authToken })
       const user = this.$cookies.get('user.id')
 
       let query = supabaseClient.from('user_bookmark').select()

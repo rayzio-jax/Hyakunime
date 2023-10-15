@@ -63,8 +63,8 @@ export default {
     }
   },
   created() {
-    const token = this.$cookies.get('auth.token')
-    this.supabaseClient = supabase({ token })
+    const authToken = this.$cookies.get('auth.token')
+    this.supabaseClient = supabase({ token: authToken })
   },
   async mounted() {
     const user = this.$cookies.get('user.id')
