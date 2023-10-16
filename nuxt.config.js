@@ -21,9 +21,7 @@ export default {
       { name: 'theme-color', content: '#ffffff' }
     ],
     link: [
-      { rel: 'apple-touch-icon', size: '180x180', href: '/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image', size: '32x32', href: '/favicon-32x32.png' },
-      { rel: 'icon', type: 'image', size: '16x16', href: '/favicon-16x16.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
       { src: 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js', type: 'module' },
