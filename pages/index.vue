@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { themeChange } from 'theme-change'
 import AnimeList from '~/components/AnimeList.vue'
 export default {
   components: {
@@ -70,6 +71,7 @@ export default {
   },
 
   mounted() {
+    themeChange(false)
     const searchedAnime = this.$store.state.animeSearch
     this.searchAnime = searchedAnime
     this.fetchData()
