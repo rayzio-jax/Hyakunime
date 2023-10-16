@@ -7,6 +7,7 @@
     >
       <h1 class="text-3xl">{{ apiLimit }}</h1>
       <p>you may have to wait tomorrow to access again</p>
+      <trakteer-button class="py-4" />
     </div>
     <!-- while loading fetch api -->
     <div
@@ -51,7 +52,8 @@
         v-else-if="!isExist"
         class="h-[100vh] flex flex-col justify-center items-center"
       >
-        <h1 class="text-3xl">No Anime Found</h1>
+        <h1 class="text-3xl py-4">No Anime Found</h1>
+        <trakteer-button />
       </div>
     </div>
   </div>
