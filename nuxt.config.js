@@ -34,7 +34,7 @@ export default {
   },
 
   target: 'server',
-  ssr: false,
+  ssr: true,
   loadingIndicator: {
     name: 'cube-grid',
     color: '#fff',
