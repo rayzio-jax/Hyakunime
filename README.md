@@ -24,4 +24,4 @@ At moment, there are only few features and it's function still limited beacuse o
 ## I'm opening collaborative for anyone who wants to develop this with me, just send message to me, I'm welcoming everyone
 
 ## License
-[MIT](LICENSE.txt)
+[MIT](LICENSE)
