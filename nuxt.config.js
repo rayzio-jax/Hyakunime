@@ -34,11 +34,11 @@ export default {
   },
 
   target: 'server',
-  ssr: true,
+  ssr: false,
   loadingIndicator: {
     name: 'cube-grid',
     color: '#fff',
-    background: '#2E3938'
+    background: '#383B3A'
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
