@@ -21,7 +21,8 @@ At moment, there are only few features and it's function still limited beacuse o
 1. Can't update user email
 2. After an anime being unbook, booked icon should turn to outline
 
-## I'm opening collaborative for anyone who wants to develop this with me, just send message to me, I'm welcoming everyone
+## DISCONTINUED
+Because of the framework and other libraries are outdated, I discontinued to update this project, I'll make new one perhaps someday with better features.
 
 ## License
 [MIT](LICENSE)
